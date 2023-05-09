@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head'); %> 
+    <title>Accueil</title>
+    <link rel="icon" type="image/png" href="../../public/images/icone/connexion.png" />
+</head>
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<body>
+    <main class="index">
+        <div class="categorie">
+            <div class="categorieTitre">
+                <h4><strong>Cinéma</strong></h4>
+                <div class="categorieCinemaListe">
+                    <p>Long métrage</p>
+                    <p>Court-métrage</p>
+                </div>
+            </div>
+            <div class="categorieTitre">
+                <h4><strong>Télévision</strong></h4>
+                <div class="categorieTelevisionListe">
+                    <p>Téléfilm</p>
+                    <p>Publicité</p>
+                    <p>Série télé</p>
+                </div>
+            </div>
+            <div class="categorieTitre">
+                <h4><strong>Divers</strong></h4>
+                <div class="categorieDiversListe">
+                    <p>Web-série</p>
+                    <p>Evènementiel</p>
+                </div>
+            </div>
+        </div>
+        <div class="soonCategories">
+            <h6 class="prochainement">PROCHAINEMENT DE NOUVELLE CATEGORIES</h6>
+        </div>
+        <div class="infoNone infoBulleRow"></div>
+        <h5 class="infoNone infoBulleCategories">Les annonces du site sont exclusivement liées au cinéma, mais ça va changer ^^</h5>
+        <% if (profil.prenom) { %>
+            <h4 class="text-muted mb-4">Bonjour <a class="profilLink text-muted" href="/profil"><%= profil.prenom %></a>, voici les dernières annonces postées à ce jour</h4>
+        <% } else { %>
+            <h1 class="text-muted mb-4 lastAnnoncesPosted">Dernières annonces postées</h1>
+        <% } %> 
+        <% data.forEach((data) => { %>
+            <a href="/detailAnnonce/<%= data.id %>" class="a_cardAnnonce">
+                <div class="card mb-4">
+                    <div class="card-body d-flex card-annonce">
+                        <p class="card-body card_annonces_index mx-1">
+                            Synopsis : 
+                            </br>
+                            </br>
+                            <%= data.synopsis %>
+                        </p>
+                        <p class="card-body card_annonces_index mx-1">
+                            Critère de sélection: 
+                            </br>
+                            </br>
+                            <%= data.critereSelection %>
+                        </p>
+                    </div>
+                </div>
+            </a> 
+        <% }); %>
+        <div class="text-center" id="pagination">
+            <% if(page > 1 ) { %> 
+                <a href="/?page=<%=page-1%>"><</a> 
+            <% } %>
+            <% for(let i = iterator; i <= endingLink; i++) { %>
+                <% if(i === page) { %>
+                    <a class="selectedLink" href="/?page=<%=i%>"><%=i%></a>
+                    <% continue %>
+                <% } %>
+                <a href="/?page=<%=i%>"><%=i%></a>
+            <%  } %>
+            <% if(page < numberOfPages) { %> 
+                <a href="/?page=<%=page+1%>">></a> 
+            <% } %>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+<script>
+    // Accueil
+
+$(".categorie").mouseenter(() => {
+    $('.infoBulleCategories').removeClass('infoNone');
+    $('.infoBulleRow').removeClass('infoNone');
+});
+$(".categorie").mouseleave(() => {
+    $('.infoBulleCategories').addClass('infoNone');
+    $('.infoBulleRow').addClass('infoNone');
+});
+$(".prochainement").mouseenter(() => {
+    $('.infoBulleCategories').removeClass('infoNone');
+    $('.infoBulleRow').removeClass('infoNone');
+});
+$(".prochainement").mouseleave(() => {
+    $('.infoBulleCategories').addClass('infoNone');
+    $('.infoBulleRow').addClass('infoNone');
+});
+</script>
+</html>

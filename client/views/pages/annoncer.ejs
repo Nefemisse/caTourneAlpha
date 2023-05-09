@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head'); %> 
+    <title>Annonce</title>
+    <link rel="icon" type="image/png" href="../../public/images/icone/PostAnnonce.png" />
+</head>
+<header>
+  <%- include('../partials/header'); %>
+</header>
+<body>
+  <main>
+    <section class="vh-100">
+      <% if (locals.success) { %>
+        <div class="alert alert-success text-center" role="alert">
+          <%=locals.success %>
+        </div>
+      <% } %>
+      <% if (locals.error) { %>
+        <div class="alert alert-danger text-center" role="alert">   <!--à modifier-->
+          <%= locals.profil%>
+        </div>
+      <% } %>
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 10px;">
+                <div class="bgc_light">
+                  <h3 class="text-left mb-3">Postez votre annonce</h3>
+                  <h5 class="text-left">Nous vérifions manuellement et systématiquement toutes les annonces.</h5>
+                </div>
+                <div class="card-body p-4">
+                  <form method="post" action="/annoncer">
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <div>
+                          <label class="form-label" id="nomContact">Nom du contact*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">      
+                          <input type="text" name="nomContact" class="form-control form-control-lg" id="field-nomContact"/>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="emailContact">Email du contact*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="text" name="emailContact" class="form-control form-control-lg" id="field-emailContact">
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <label class="form-label">Site Web</label>
+                        <input type="text" name="siteWeb" class="form-control form-control-lg"/>
+                      </div>
+                      <div class="right-form">
+                        <label class="form-label">Tél.*</label>
+                        <input type="tel" name="tel" class="form-control form-control-lg" pattern="[0]{1}[1-9]{1}[0-9]{8}" required placeholder="01.23.45.67.89" id="field-tel"/>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-1">
+                      <div>
+                        <label class="form-label" id="siret">Votre Siret*</label>
+                        <div class="error-message"></div>
+                      </div>
+                      <div class="d-flex">                  
+                        <input type="text" name="siret" class="form-control form-control-lg" id="field-siret" pattern="[0-9]{9}[0-9]{5}" placeholder="12345678912345"/>
+                        <div class="cross"></div>
+                      </div>
+                    </div>
+                  <div class="form-outline mb-1">
+                    <div>
+                      <label class="form-label" id="adresseTournage">Adresse du lieu de tournage*</label>
+                      <div class="error-message"></div>
+                    </div>
+                    <div class="d-flex">                  
+                      <input type="text" name="adresseTournage" class="form-control form-control-lg" id="field-adresseTournage"/>
+                      <div class="cross"></div>
+                    </div>
+                  </div>
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <div>
+                          <label class="form-label" id="villeTournage">Ville*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">      
+                          <input type="text" name="ville" class="form-control form-control-lg" id="field-villeTournage"/>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="codePostalTournage">Code Postal*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="text" name="codePostal" pattern="[0-9]{5}" required placeholder="75015" class="form-control form-control-lg" id="field-codePostalTournage">
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form date date-form">
+                        <label class="form-label">Date de début du tournage*</label>
+                        <input type="date" name="dateDebutTournage" class="form-control form-control-lg" id="field-dateDebutTournage"/>
+                      </div>
+                      <div class="right-form date date-form">
+                        <label class="form-label">Date de fin du tournage*</label>
+                        <input type="date" name="dateFinTournage" pattern="[0-9]{5}" required placeholder="75015" class="form-control form-control-lg" id="field-dateFinTournage"/>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-1">
+                      <div>
+                        <label class="form-label" id="remuneration">Rémunération (/j)*</label>
+                        <div class="error-message"></div>
+                      </div>
+                      <div class="d-flex">                  
+                        <input type="text" name="remuneration" class="form-control form-control-lg" id="field-remuneration"/>
+                        <div class="cross"></div>
+                      </div>
+                    </div>
+                      <div class="form-outline mb-1">
+                        <div class="d-flex errorTextarea">
+                          <label class="form-label textareaDescription" id="synopsis">Synopsis*</label>
+                          <div class="cross"></div>
+                          <div class="error-message"></div>
+                        </div>
+                        <div>                  
+                          <div class="d-flex justify-content-center">
+                            <textarea name="synopsis" cols="45" rows="6" class="textareaDescription" id="field-synopsis"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-outline mb-1">
+                        <div class="d-flex errorTextarea">
+                          <label class="form-label mt-1 textareaDescription" id="exigenceRecruteur">Exigence du recruteur*</label>
+                          <div class="cross"></div>
+                          <div class="error-message"></div>
+                        </div>
+                        <div>                  
+                          <div class="d-flex justify-content-center">
+                            <textarea name="critereSelection" cols="45" rows="6" class="textareaDescription" id="field-exigenceRecruteur"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3" id="envoyer">Envoyer</button>
+                    </div>    
+                  </br>
+                    <p class="text-center mt-1 text-muted">(*) à remplir obligatoirement</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

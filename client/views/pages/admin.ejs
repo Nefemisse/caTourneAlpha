@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head')%>
+    <title>Centre de contrôle</title>
+    <link rel="icon" type="image/png" href="../../public/images/icone/icon_admin.png " />
+</head>
+<header>
+  <%- include('../partials/header')%>
+</header>
+<body>
+    <div class="none_adminAnnonces toggleAnnonces">
+      <% data.forEach((data) => { %>
+        <div class="card mb-4">
+          <div class="card-body d-flex card-annonce">
+            <p class="card-body">
+              <%= data.synopsis %>
+              <%= console.log(data); %>
+            </p>
+            <p class="card-body">
+              <%= data.critereSelection %>
+            </p>
+            <a href="/detailAnnonce/<%= data.id %>"><button class="btn btn-primary">Détail</button></a> 
+          </div>
+        </div>
+        <% }); %>
+    </div>
+
+    <% let isValidate = 0 %>
+    <% if (isValidate == 0) { %>
+      <section class="vh-100 none_admin toggleAdmin">
+          <% if (locals.success) { %>
+            <div class="alert alert-success text-center" role="alert">
+              <% console.log(data); %>
+            </div>
+            <% } %>
+          <% if (locals.error) { %>
+            <div class="alert alert-danger text-center" role="alert">   <!--à modifier-->
+              <%= locals.profil%>
+            </div>
+          <% } %>
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 10px;">
+                  <div class="bgc_light">
+                    <h3 class="text-left mb-3">Validation de l'annonce n°
+                      <select name="annonces" id="annonces">
+                        <% let i = -2 %>
+                        <!-- % let i = (data.length)-2 %> -->
+                        <% data.forEach((data) => { %>
+                          <% i++ %>
+                            <option value="dataId"><%= data.id;%></option>
+                        <% }); %>
+                      </select>
+                    </h3>
+                    <h5 class="text-left">Nous vérifions manuellement et systématiquement toutes les annonces.</h5>
+                  </div>
+                  <div class="card-body p-4">
+                    <form method="post" action="/admin">
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <h5 class="form-h5">Nom du contact*</h5>
+                          <p><%= locals.data[i].nomContact %></p>
+                        </div>
+                        <div class="right-form">
+                          <h5 class="form-h5">Email du contact*</h5>
+                          <p><%= locals.data[i].emailContact %></p>
+                        </div>
+                      </div>
+                      
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <h5 class="form-h5">Site Web</h5>
+                          <p><%= locals.data[i].siteWeb %></p>
+                        </div>
+                        <div class="right-form">
+                          <h5 class="form-h5">Tél.*</h5>
+                          <p><%= locals.data[i].tel %></p>
+                        </div>
+                      </div>
+                      
+                      <div class="form-outline mb-1">
+                        <h5 class="form-h5">Votre Siret*</h5>
+                        <p><%= locals.data[i].siret %></p>
+                      </div>
+
+                      <div class="form-outline mb-1">
+                        <h5 class="form-h5">Adresse du lieu de tournage*</h5>
+                        <p><%= locals.data[i].adresseTournage %></p>
+                      </div>
+                      
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <h5 class="form-h5">Ville*</h5>
+                          <p><%= locals.data[i].ville %></p>
+                        </div>
+                        <div class="right-form">
+                          <h5 class="form-h5">Code Postal*</h5>
+                          <p><%= locals.data[i].codePostal %></p>
+                        </div>
+                      </div>
+                      
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form date date-form">
+                          <h5 class="form-h5">Date de début du tournage*</h5>
+                          <p><%= locals.data[i].dateDebutTournage %></p>
+                        </div>
+                        <div class="right-form date date-form">
+                          <h5 class="form-h5">Date de fin du tournage*</h5>
+                          <p><%= locals.data[i].dateFinTournage %></p> 
+                        </div>
+                      </div>
+                      
+                      <div class="form-outline mb-1">
+                        <h5 class="form-h5">Rémunération*</h5>
+                        <p><%= locals.data[i].remuneration %> / j</p>
+                      </div>
+
+                        <h5 class="form-h5 textareaDescription">Synopsis*</h5>
+                        <div class="d-flex justify-content-center">
+                          <p><%= locals.data[i].synopsis %></p>
+                        </div>
+
+                        <h5 class="form-h5 mt-1 textareaDescription">Exigence du recruteur*</h5>
+                        <div class="d-flex justify-content-center">
+                          <p><%= locals.data[i].critereSelection %></p>
+                        </div>
+                      
+                      <h5 class="form-h5 mt-1">Photo miniature d'annonce</h5>
+                      <div class="d-flex justify-content-between">
+                        <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                      </div>
+                      
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3">Valider</button>
+                      </div>
+                      
+                    </br>
+                    <p class="text-center mt-1 text-muted">(*) à remplir obligatoirement</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% } %>
+    <section class="toggle_passif">
+      <% if (profil.token) { %>
+        <% if (profil.success) { %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= profil.success%>
+          </div>
+        <% } %>
+        <% if (profil.error) { %>
+          <div class="alert alert-danger text-center" role="alert">   <!--à modifier-->
+            <%=  profil.error%>
+          </div>
+        <% } %>
+        <div class="mask d-flex h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 10px;">
+                  <div class="bgc_light">
+                    <h3 class="text-left mb-3">Profil</h3>
+                    <h5 class="text-left">Mettez à jour votre profil administrateur ici</h5>
+                  </div>
+                  
+                  <div class="card-body p-4">
+                    <form method="POST" action="/profil">
+                      <div class="form-outline mb-1">
+                        <label class="form-label">Prénom</label>
+                        <input type="text" name="prenom" class="form-control form-control-lg" value="<%= profil.prenom %>"/>
+                      </div>
+  
+                      <div class="form-outline mb-1">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg" value="<%= profil.email %>"/>
+                      </div>
+  
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3">Envoyer</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </section> 
+</body>
+<script>
+  $( "#admin_validateAnnonce" ).click(() => {
+      $('.toggleAdmin').toggleClass("none_admin");
+      $('.toggle_passif').toggleClass('none_admin')
+  });
+  $( "#admin_annonce" ).click(() => {
+      $('.toggleAnnonces').toggleClass("none_adminAnnonces");
+      $('.toggle_passif').toggleClass('none_adminAnnonces')
+  });
+  $( "#admin_users" ).click(() => {
+      $('.toggleUsers').toggleClass("none_adminUsers");
+      $('.toggle_passif').toggleClass('none_adminUsers')
+  });
+</script>
+</html>

@@ -1,0 +1,630 @@
+* {
+    list-style: none;
+  }
+  body,
+  html {
+    margin: 0;
+    height: 100%;
+  }
+  p, h1, h2, h3, h4, h5{
+    cursor: default;
+  }
+  body {
+    padding: 0;
+    font-family: "Poppins, Avenir Next", "Avenir", sans-serif;
+    margin-top: 180px;
+  }
+  .a_cardAnnonce {
+    text-decoration: none;
+    color: black;
+  }
+  .a_cardAnnonce:hover,
+  input:hover {
+    color: black;
+    opacity: 0.6;
+  }
+  .icone_connexion {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+  html {
+    min-width: 320px;
+  }
+  main {
+    max-width: 1440px;
+      margin: auto;
+  }
+  .errorTextarea {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .profilLink {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .infoNone{
+    /* display: none; */
+    visibility: hidden;
+  }
+  .infoBulle,
+  .infoBulleCategories {
+    background-color: #ededed;
+    color: #6aa9da;
+    text-align: center;
+    position: relative;
+    top: -23px;
+    left: -12px;
+    border: solid 1px black;
+    border-radius: 2px;
+    text-shadow: 0px 1px 0 #0055af;
+  }
+  .infoBulle {
+    width: 110%;
+  }
+  .infoBulleRow {
+    position: relative;
+    top: -15px;
+    left: 120px;
+    content: "";
+    background-color: #ededed;
+    width: 15px;
+    height: 15px;
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    transform: rotateZ(45deg);
+    z-index: 1;
+  }
+  .infoBulleFooter{
+    background-color: #ededed;
+    color: #6aa9da;
+    text-align: center;
+    position: relative;
+    top: -9px;
+    left: -5px;
+    border: solid 1px black;
+    border-radius: 2px;
+    text-shadow: 0px 1px 0 #0055af;
+    padding: 2px;
+  }
+  .infoBulleFooter span {
+    cursor: default;
+  }
+  .infoBulleRowFooter {
+    position: relative;
+    top: 28px;
+    left: -20px;
+    content: "";
+    background-color: #ededed;
+    width: 15px;
+    height: 15px;
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+    transform: rotateZ(45deg);
+    z-index: 1;
+  }
+  .prochainement {
+    position: relative;
+    top: -125px;
+    transform: rotateZ(-10deg);
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #368fd3;
+    width: 80%;
+    text-shadow: 1px 2px 2px black;
+    cursor: default;
+  }
+  .soonCategories {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  /* catégories */
+  .categorie {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+    opacity: 0.4;
+    position: relative;
+    top: 20px;
+    max-width: 1440px;
+    margin: auto;
+    cursor: default;
+  }
+  .photoProfil,
+  .photoProfilBase,
+  .photoProfilAnnonce {
+    justify-content: space-between;
+    border-radius: 30%;
+  }
+  .photoProfilAnnonce{
+    width: 200px;
+  }
+  #photoProfil{
+    width: 17%;
+    margin-right: 5%;
+  }
+  .photoProfil{
+    width: 103%;
+    border: solid 1px #c7c7c7;
+  }
+  .photoProfilBase{
+    width: 140%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 1px #c7c7c7;
+  }
+  .none_admin, .none_adminAnnonces {
+    display: none;
+  }
+  .margin-detailAnnonces {
+    margin-right: 4%;
+  }
+  .vw-25 {
+    width: 25vw;
+  }
+  .inscription{
+    background-color: #6aa9da;
+    border-radius: 5px;
+    color: white;
+  }
+  .header_inscription {
+    display: flex;
+    align-items: center;
+  }
+  .card-candidature {
+    width: 100%;
+    min-width: 260px;
+  }
+  .card_body_candidature {
+    border-radius: 10px;
+    background-color: #ededed;
+    text-align: center;
+  }
+  .card_body {
+    padding: 2% 5% 5% 0;
+  }
+  .detailAnnonceBtnInscription {
+    display: flex;
+    justify-content: center;
+  }
+  .detailAnnonceBtnConnexion {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .main_detailAnnonce {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem ;
+    justify-content: space-between;
+  }
+  .btn-candidater {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .bg_admin {
+    background-color: #EDEDED;
+  }
+  button {
+    border: none;
+  }
+  header {
+    margin-bottom: 15px;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .optionAnnonces {
+    max-width: 500px;
+  }
+  .connexion_header_nav {
+    display: flex;
+    flex-direction: row;
+    }
+  .nav-bar-header {
+    background-color: #ededed;
+    padding: 30px;
+  }
+  .card-annonce {
+    justify-content: space-between
+  }
+  .card-body {
+    width: 100%;
+  }
+  .card_annonces_index{
+    border: 2px solid #5e8ba7;
+    border-radius: 15px;
+  }
+  .logoutBis {
+    border: none;
+  }
+  .ma {
+    margin: auto;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  .logo2 {
+    width: 126px;
+  }
+  .titleLogin {
+    background-color: #EDEDED;
+    text-align: center;
+    padding-top: 2rem !important;
+  }
+  .formLogin {
+    width: 50% !important;
+    box-shadow: 0 5px 8px 0 rgb(0 0 0 / 20%), 0 9px 26px 0 rgb(0 0 0 / 19%);
+    min-width: 270px;
+  }
+  .separateLogin {
+    border-bottom: solid 1px gray;
+    opacity: 0.8;
+    margin: 1.5rem 0 1rem 0;
+  }
+  .lienAccueil{
+    align-items: center;
+  }
+  .index {
+    padding: 0.2% 2% 0 2%;
+  }
+  .date-form {
+      width: 50%;
+    }
+  .icone {
+    width: 36px;
+    height: 36px;
+  }
+  .bgc_light,
+  .bgc_lightFooter {
+    background-color: #ededed;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: space-between;
+  }
+  .bgc_lightFooter {
+    padding-bottom: 45px;
+  }
+  .bgc_light {
+    padding: 30px;
+  }
+  .birthdate {
+    width: 64%;
+  }
+  .left-form {
+    padding-right: 5px;
+  }
+  .right-form {
+    padding-left: 5px;
+  }
+  .login {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+  .login-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .login-form-1 {
+    padding: 3% 5% 3% 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    min-width: 270px;
+  }
+  .login-form-1 h3 {
+    text-align: center;
+    color: #333;
+  }
+  .login-container form {
+    padding: 10%;
+  }
+  .btnSubmit {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+  }
+  .login-form-1 .btnSubmit {
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+  }
+  .login-form-1 .ForgetPwd {
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn-blue {
+    background-color: #6aa9da;
+    color: #ffffff;
+  }
+  .cross {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    border-radius: 50% 50%;
+    display: none;
+    position: relative;
+  }
+  .cross::before {
+    background: #ff5b5b;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 70%;
+    height: 6%;
+    top: 47%;
+    left: 15%;
+    transform: rotate(45deg);
+    border-radius: 10px;
+  }
+  .cross::after {
+    background: #ff5b5b;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 6%;
+    height: 70%;
+    left: 47%;
+    top: 15%;
+    transform: rotate(45deg);
+    border-radius: 10px;
+  }
+  #candidater,
+  .candidater,
+  #infoAnnonceur {
+    cursor: pointer;
+  }
+  .candidater {
+    border: solid 1.5px #0055af;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    font-style: italic;
+    text-shadow: 0px 1px 0 #0055af;
+  }
+  .contact {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .contactFooter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .CarouHome {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel a {
+    border: 1px solid black;
+    width: 120px;
+    height: 183px;
+  }
+  .carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 183px;
+  }
+  #pagination {
+    margin-bottom: 85px;
+    z-index: 1031;
+  }
+  #pagination a {
+    margin-right: 5px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    border: solid 1px #EAEAEA;
+    padding: 4px 8px 4px 8px;
+    color: #000000;
+    background-color: white;
+  }
+  #pagination a:active {
+    background-color: #3BBEDB;
+    color: white;
+  }
+  /* --------------- Menu burger --------------- */
+  #menuToggle {
+    display: block;
+    position: relative;
+    top: -80px;
+    left: 40px;
+    user-select: none;
+  }
+  #menuToggle ul footer {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  #menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+  }
+  #menuToggle input {
+    display: block;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    opacity: 0;
+    z-index: 2;
+  }
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 3;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
+  }
+  .lastAnnoncesPosted{
+    font-size: 1.6rem;
+  }
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+  #menu {                                       /* --------- à check ---------- */
+    position: relative;
+    width: 215px;
+    height: 101vh;
+    margin: -70px 0 0 -45px;
+    padding: 0;
+    padding-top: 15px;
+    background: #ededed;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    box-shadow: 0px 4px 6px 2px black;
+  }                                             /* ---------------------------- */
+  .menu_ul {
+    height: 39.5%;
+    text-align: center;
+    margin-top: 90px;
+  }
+  .menu_ul li {
+    padding: 10px 0;
+    font-size: 22px;
+    margin: 0;
+  }
+  nav {
+    position: fixed;
+  }
+  #nav_desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 1px 9px #333;
+  }
+  #nav_mobile {
+    z-index: 2;
+  }
+  /* ---------- Responsivité ---------- */
+
+  @media (min-width: 596px) {
+    #bloc_page {
+      display: none;
+    }
+  }
+  @media (max-width: 595px) {
+    body {
+      margin-top: 120px;
+    }
+    #nav_desktop {
+      box-shadow: none;
+    }
+    .birthdate {
+      width: 100%;
+    }
+    #nav_desktop {
+      justify-content: flex-end;
+    }
+    .date-form {
+      width: 100%;
+    }
+    .textareaDescription {
+      display: none;
+    }
+    .form-outline {
+      flex-direction: column;
+    }
+    .connexion_header_nav {
+      flex-direction: column;
+    }
+    .right-form,
+    .left-form {
+      padding: 0;
+    }
+    .right-form{
+      margin-top: 0.25rem;
+    }
+    main{
+      top: 315px
+    }
+    .connexion_header_nav {
+      display: none !important;
+    }
+  }
+  @media (max-width: 768px) {
+    .card-annonce {
+      flex-direction: column;
+    }
+    .categorie,
+    .soonCategories {
+      display: none;
+    }
+    footer {
+      display: none
+    }
+    #pagination {
+      padding-bottom: 20px;
+    }
+    .loginHeader {
+      margin-bottom: 0;
+    }
+    .formLogin {
+      width: 100% !important;
+    }
+  }
+  @media (min-width: 840px) {
+    #candidater{
+      display: none
+    }
+    #infoAnnonceur {
+      display: none;
+    }
+  }
+  @media (max-width: 839px) {
+    .candidature {
+      display: none;
+    }
+    .toggle {
+      width: 50%;
+    }
+    .none {
+      display: none;
+    }
+  }
+  @media (min-width: 1400px) {
+    .birthdate {
+      width: 52%;
+    }
+    .formLogin {
+      width: 40% !important;
+    }
+  }

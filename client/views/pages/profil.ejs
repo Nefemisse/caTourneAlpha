@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head'); %> 
+    <link rel="icon" type="image/png" href="../../public/avatar/icone/user-profile.png" />
+    <title>Profil</title>
+</head>
+<header>
+  <%- include('../partials/header'); %>
+</header>
+<body>
+  <main>
+    <section class="vh-100">
+      <% if (locals.token) { %>
+        <% if (locals.profil.success) { %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= locals.profil.success%>
+          </div>
+        <% } %>
+        <% if (locals.profil.error) { %>
+          <div class="alert alert-danger text-center" role="alert">   <!--à modifier-->
+            <%= locals.profil.error%>
+          </div>
+        <% } %>
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 10px;">
+                  <div class="d-flex bgc_light">
+                    <div>
+                      <h3 class="text-left mb-3">Profil</h3>
+                      <h5 class="text-left">Mettez à jour votre profil ici</h5>
+                    </div>
+                    <div id="photoProfil">
+                      <% if (locals.data.photoProfil) { %> 
+                        <img class="photoProfil" src="../../public/avatars/<%= locals.data.photoProfil %>" alt="photoProfil">
+                      <% } else { %> 
+                        <img class="photoProfilBase" src="../../public/avatars/choisir-photo-profil.png" alt="photoProfilBase">
+                      <% } %> 
+                    </div>
+                  </div>
+                  <div class="card-body p-4">
+                    <form method="POST" action="/profil">
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <label class="form-label">Prénom</label>
+                          <input type="text" name="prenom" class="form-control form-control-lg" value="<%= locals.data.prenom %>" />
+                        </div>
+                        <div class="right-form">
+                          <label class="form-label">Nom</label>
+                          <input type="text" name="nom" class="form-control form-control-lg" value="<%= locals.data.nom %>" />
+                        </div>
+                      </div>
+                      <div class="form-outline mb-1">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg" value="<%= locals.data.email %>"/>
+                      </div>
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <label class="form-label">Site Web</label>
+                          <input type="text" name="siteWeb" class="form-control form-control-lg" value="<%= locals.data.siteWeb %>"/>
+                        </div>
+                        <div class="right-form">
+                          <label class="form-label">Tél.</label>
+                          <input type="tel" name="tel" class="form-control form-control-lg" pattern="[0]{1}[1-9]{1}[0-9]{8}" required placeholder="01.23.45.67.89" value="0<%= locals.data.tel %>"/>
+                        </div>
+                      </div>
+                      <div class="form-outline mb-1">
+                          <label class="form-label">Nom du titulaire du compte</label>
+                          <input type="text" name="nomTitulaireCompte" class="form-control form-control-lg" value="<%= locals.data.nomTitulaireCompte %>"/>
+                      </div>
+                      <div class="form-outline mb-1">
+                        <label class="form-label">IBAN</label>
+                        <input type="text" name="iban" class="form-control form-control-lg" value="<%= locals.data.iban %>"/>
+                      </div>
+                      <div class="form-outline mb-1">
+                        <label class="form-label">Adresse</label>
+                        <input type="text" name="adresse" class="form-control form-control-lg" value="<%= locals.data.adresse %>"/>
+                      </div>
+                      <div class="d-flex form-outline mb-1">
+                        <div class="left-form">
+                          <label class="form-label">Ville</label>
+                          <input type="text" name="ville" class="form-control form-control-lg" value="<%= locals.data.ville %>"/>
+                        </div>
+                        <div class="right-form">
+                          <label class="form-label">Code Postal</label>
+                          <input type="text" name="codePostal" pattern="[0-9]{5}" required placeholder="75015" class="form-control form-control-lg" value="<%= locals.data.codePostal %>"/>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3">Envoyer</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+SEO = lien réseua sociaux
+BIBLIOTHÈQUE s = rxjs
+ddos en front avec jQuery
+EJS MOTEUR de template
+sépare en couche applicative modulariser l'application
+pas forcément besoin de model si par exmeple pas de donnée 
+sequlize requêtes préparées

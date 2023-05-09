@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Inscription</title>
+    <link rel="icon" type="image/png" href="../../public/images/icone/register.png" />
+</head>
+<header>
+  <%- include('../partials/header'); %>
+</header>
+<body> 
+  <main>
+    <section class="vh-100">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 10px;">
+                <div class="bgc_light">
+                  <h5 class="text-left mb-3">Les inscriptions sont ouvertes,</h5>
+                  <h5 class="text-left">Ne perdez pas de temps et rejoignez notre communauté !</h5>
+                </div>
+                <div class="card-body p-4">
+                  <form method="post" action="/register" enctype="multipart/form-data">
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <div>
+                          <label class="form-label" id="prenom">Prénom*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="text" name="prenom" class="form-control form-control-lg" id="field-prenom"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="nom">Nom*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">                  
+                          <input type="text" name="nom" class="form-control form-control-lg" id="field-nom"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <div>
+                          <label class="form-label" id="password1">Mot de passe*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">                  
+                          <input type="password" name="password1" class="form-control form-control-lg" id="field-password1"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="password">Confirmation mot de passe*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="password" name="password" class="form-control form-control-lg" id="field-password"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form birthdate">
+                        <div>
+                          <label class="form-label" id="birthdate">Date de naissance</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">                  
+                          <input type="date" name="birthdate" class="form-control form-control-lg" id="field-birthdate"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="email">Email*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="email" name="email" class="form-control form-control-lg" id="field-email" placeholder="jeanDurant@hotmail.fr"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <label class="form-label">Site Web</label>
+                        <input type="text" name="siteWeb" class="form-control form-control-lg" placeholder="http://çaTourne.fr"/>
+                      </div>
+                      <div class="right-form">
+                        <label class="form-label">Tél.*</label>
+                        <input type="tel" name="tel" class="form-control form-control-lg" pattern="[0]{1}[1-9]{1}[0-9]{8}" required placeholder="01.23.45.67.89"/>
+                      </div>
+                    </div>
+  
+                    <div class="form-outline mb-1">
+                        <label class="form-label">Nom du titulaire du compte</label>
+                        <input type="text" name="nomTitulaireCompte" class="form-control form-control-lg" placeholder="Mr. Durant Jean"/>
+                    </div>
+  
+                    <div class="form-outline mb-1">
+                      <label class="form-label">IBAN</label>
+                      <input type="text" name="iban" class="form-control form-control-lg" placeholder="FR 12 12345 12345 0123456A012 01"/>
+                    </div>
+  
+                    <div class="form-outline mb-1">
+                      <div>
+                        <label class="form-label" id="adresse">Adresse*</label>
+                        <div class="error-message"></div>
+                      </div>
+                      <div class="d-flex">                  
+                        <input type="text" name="adresse" class="form-control form-control-lg" id="field-adresse" placeholder="1 rue boileau"></input>
+                        <div class="cross"></div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex form-outline mb-1">
+                      <div class="left-form">
+                        <div>
+                          <label class="form-label" id="ville">Ville*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">                  
+                          <input type="text" name="ville" class="form-control form-control-lg" id="field-ville" placeholder="Paris"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                      <div class="right-form">
+                        <div>
+                          <label class="form-label" id="codePostal">Code Postal*</label>
+                          <div class="error-message"></div>
+                        </div>
+                        <div class="d-flex">   
+                          <input type="text" name="codePostal" pattern="[0-9]{5}" required placeholder="75015" class="form-control form-control-lg" id="field-codePostal"></input>
+                          <div class="cross"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <label class="form-label">Photo de profil</label>
+                    <div class="d-flex justify-content-between">
+                      <input type="file" id="avatar" name="photoProfil" placeholder="Choisissez un avatar">
+                    </div>
+  
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3" id="envoyer">Inscription</button>
+                    </div>
+    
+                    <p class="text-center text-muted mt-3 mb-0">Vous avez déjà un compte ? 
+                      <a href="./login" class="fw-bold text-body"><u>Connectez-vous ici</u></a>
+                    </p>
+                    <p class="text-center mt-1 text-muted">(*) à remplir obligatoirement</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+<script>
+  $(()=>{
+    $("#field-nom").keyup(function() {
+      if($("#field-nom").val() == "") {
+        let errorMessage = "Veuillez entrez votre nom";
+        document.getElementById('nom').textContent = errorMessage;
+        $("#field-nom").css("border-color", "#FF0000");
+        $("#field-nom").next(".cross").show();
+        $("#nom").css("color", "#FF0000");
+      } else {
+        if (!$("#field-nom").val().match(/^[a-z]+$/i)) {
+          let errorMessage = "Uniquement des lettres";
+          $("#field-nom").next(".cross").show()
+          $("#field-nom").css("border-color", "#FF0000");
+          document.getElementById('nom').textContent = errorMessage
+          $("#nom").css("color", "#FF0000");
+        } else {
+          $("#field-nom").next(".cross").hide().text("");
+          document.getElementById('nom').textContent = "Nom*"
+          $("#nom").css("color", "#000000");
+          $("#field-nom").css("border-color", "#ced4da");
+        }
+      }
+    })
+    $("#field-prenom").keyup(function() {
+      if($("#field-prenom").val() == "") {
+        let errorMessage = "Veuillez entrez votre prenom";
+        document.getElementById('prenom').textContent = errorMessage;
+        $("#field-prenom").css("border-color", "#FF0000");
+        $("#field-prenom").next(".cross").show();
+        $("#prenom").css("color", "#FF0000");
+      } else {
+        if (!$("#field-prenom").val().match(/^[a-z]+$/i)) {
+          let errorMessage = "Uniquement des lettres";
+          $("#field-prenom").next(".cross").show()
+          $("#field-prenom").css("border-color", "#FF0000");
+          document.getElementById('prenom').textContent = errorMessage
+          $("#prenom").css("color", "#FF0000");
+        } else {
+          $("#field-prenom").next(".cross").hide().text("");
+          document.getElementById('prenom').textContent = "Prénom*"
+          $("#prenom").css("color", "#000000");
+          $("#field-prenom").css("border-color", "#ced4da");
+        }
+      }
+    })
+    $("#field-password1").keyup(function() {
+      if($("#field-password1").val() == "") {
+        let errorMessage = "Veuillez entrez votre mot de passe";
+        document.getElementById('password1').textContent = errorMessage;
+        $("#field-password1").css("border-color", "#FF0000");
+        $("#field-password1").next(".cross").show();
+        $("#password1").css("color", "#FF0000");
+      } else {
+        if (!$("#field-password1").val().match(/(?=[A-Za-z0-9éèàêëàâäuùûüiîïoôöyŷÿæÆÐ!@#&$()[{.\]\}-]+$)^(?=.*[0-9])(?=.*[A-Z]).{8,255}$/)) {
+          let errorMessage = "Minimum 8 caractères dont 1 majuscule et 1 chiffre";
+          $("#field-password1").next(".cross").show()
+          $("#field-password1").css("border-color", "#FF0000"); 
+          document.getElementById('password1').textContent = errorMessage
+          $("#password1").css("color", "#FF0000");
+        } else {
+          $("#field-password1").next(".cross").hide().text("");
+          document.getElementById('password1').textContent = "Mot de passe*"
+          $("#password1").css("color", "#000000");
+          $("#field-password1").css("border-color", "#ced4da");
+        }
+      }
+    })
+    $("#field-password").keyup(function() {
+      if($("#field-password").val() == "") {
+        let errorMessage = "Entrez à nouveau votre mot de passe";
+        document.getElementById('password').textContent = errorMessage;
+        $("#field-password").css("border-color", "#FF0000");
+        $("#field-password").next(".cross").show();
+        $("#password").css("color", "#FF0000");
+      } else {
+        if ($("#field-password").val() == $("#field-password1").val()) {
+          $("#field-password").next(".cross").hide().text("");
+          document.getElementById('password').textContent = "Confirmation mot de passe*"
+          $("#password").css("color", "#000000");
+          $("#field-password").css("border-color", "#ced4da");
+        } else {
+          let errorMessage = "Les mot de passe ne correspondent pas";
+          $("#field-password").next(".cross").show()
+          $("#field-password").css("border-color", "#FF0000"); 
+          document.getElementById('password').textContent = errorMessage
+          $("#password").css("color", "#FF0000");
+        }
+      }
+    })
+    $("#field-email").keyup(function() {
+      if($("#field-email").val() == "") {
+        let errorMessage = "Veuillez entrez votre adresse mail";
+        document.getElementById('email').textContent = errorMessage;
+        $("#field-email").css("border-color", "#FF0000");
+        $("#field-email").next(".cross").show();
+        $("#email").css("color", "#FF0000");
+      } else {
+        if ($("#field-email").val().match(/^([^<>\[\]\\,;:\s@"]*)@([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}$/)) {
+          $("#field-email").next(".cross").hide().text("");
+          document.getElementById('email').textContent = "Email*"
+          $("#email").css("color", "#000000");
+          $("#field-email").css("border-color", "#ced4da");
+        } else {
+          let errorMessage = "Veuillez entrer une adresse valide";
+          $("#field-email").next(".cross").show()
+          $("#field-email").css("border-color", "#FF0000"); 
+          document.getElementById('email').textContent = errorMessage
+          $("#email").css("color", "#FF0000");
+        }
+      }
+    })
+    $("#field-adresse").keyup(function() {
+      if($("#field-adresse").val() == "") {
+        let errorMessage = "Veuillez entrez votre adresse";
+        document.getElementById('adresse').textContent = errorMessage;
+        $("#field-adresse").css("border-color", "#FF0000");
+        $("#field-adresse").next(".cross").show();
+        $("#adresse").css("color", "#FF0000");
+      } else {
+        $("#field-adresse").next(".cross").hide().text("");
+        document.getElementById('adresse').textContent = "Adresse*"
+        $("#adresse").css("color", "#000000");
+        $("#field-adresse").css("border-color", "#ced4da");
+      }
+    })
+    $("#field-ville").keyup(function() {
+      if($("#field-ville").val() == "") {
+        let errorMessage = "Veuillez entrez votre ville";
+        document.getElementById('ville').textContent = errorMessage;
+        $("#field-ville").css("border-color", "#FF0000");
+        $("#field-ville").next(".cross").show();
+        $("#ville").css("color", "#FF0000");
+      } else {
+        if (!$("#field-ville").val().match(/^[a-z]+$/i)) {
+          let errorMessage = "Uniquement des lettres";
+          $("#field-ville").next(".cross").show()
+          $("#field-ville").css("border-color", "#FF0000");
+          document.getElementById('ville').textContent = errorMessage
+          $("#ville").css("color", "#FF0000");
+        } else {
+          $("#field-ville").next(".cross").hide().text("");
+          document.getElementById('ville').textContent = "Ville*"
+          $("#ville").css("color", "#000000");
+          $("#field-ville").css("border-color", "#ced4da");
+        }
+      }
+    })
+    $("#field-codePostal").keyup(function() {
+      if($("#field-codePostal").val() == "") {
+        let errorMessage = "Veuillez entrez votre code postal";
+        document.getElementById('codePostal').textContent = errorMessage;
+        $("#field-codePostal").css("border-color", "#FF0000");
+        $("#field-codePostal").next(".cross").show();
+        $("#codePostal").css("color", "#FF0000");
+      } else {
+        if (!$("#field-codePostal").val().match(/^[0-9]+$/i)) {
+          let errorMessage = "Uniquement des chiffres";
+          $("#field-codePostal").next(".cross").show()
+          $("#field-codePostal").css("border-color", "#FF0000");
+          document.getElementById('codePostal').textContent = errorMessage
+          $("#codePostal").css("color", "#FF0000");
+        } else {
+          $("#field-codePostal").next(".cross").hide().text("");
+          document.getElementById('codePostal').textContent = "Code Postal*"
+          $("#codePostal").css("color", "#000000");
+          $("#field-codePostal").css("border-color", "#ced4da");
+        }
+      }
+    })
+    $("#envoyer").click(()=>{
+      valid = true;
+      if($("#field-nom").val() == "") {
+        let errorMessage = "Veuillez indiquer votre nom";
+        document.getElementById('nom').textContent = errorMessage;
+        $("#field-nom").css("border-color", "#FF0000"); 
+        $("#field-nom").next(".cross").fadeIn();
+        $("#nom").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-prenom").val() == "") {
+        let errorMessage = "Veuillez indiquer votre prenom";
+        document.getElementById('prenom').textContent = errorMessage;
+        $("#field-prenom").css("border-color", "#FF0000"); 
+        $("#field-prenom").next(".cross").fadeIn();
+        $("#prenom").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-password1").val() == "") {
+        let errorMessage = "Veuillez entrer un mot de passe";
+        document.getElementById('password1').textContent = errorMessage;
+        $("#field-password1").css("border-color", "#FF0000");
+        $("#field-password1").next(".cross").fadeIn();
+        $("#password1").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-password").val() == "") {
+        let errorMessage = "Veuillez confirmer votre mot de passe";
+        document.getElementById('password').textContent = errorMessage;
+        $("#field-password").css("border-color", "#FF0000");
+        $("#field-password").next(".cross").fadeIn();
+        $("#password").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-email").val() == "") {
+        let errorMessage = "Veuillez indiquer votre adresse mail";
+        document.getElementById('email').textContent = errorMessage;
+        $("#field-email").css("border-color", "#FF0000");
+        $("#field-email").next(".cross").fadeIn();
+        $("#email").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-adresse").val() == "") {
+        let errorMessage = "Veuillez indiquer votre lieu de résidence";
+        document.getElementById('adresse').textContent = errorMessage;
+        $("#field-adresse").css("border-color", "#FF0000");
+        $("#field-adresse").next(".cross").fadeIn();
+        $("#adresse").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-ville").val() == "") {
+        let errorMessage = "Veuillez indiquer votre ville";
+        document.getElementById('ville').textContent = errorMessage;
+        $("#field-ville").css("border-color", "#FF0000");
+        $("#field-ville").next(".cross").fadeIn();
+        $("#ville").css("color", "#FF0000");
+        valid = false;
+      }
+      if($("#field-codePostal").val() == "") {
+        let errorMessage = "Veuillez indiquer le code postal";
+        document.getElementById('codePostal').textContent = errorMessage;
+        $("#field-codePostal").css("border-color", "#FF0000");
+        $("#field-codePostal").next(".cross").fadeIn();
+        $("#codePostal").css("color", "#FF0000");
+        valid = false;
+      } else if($("#field-codePostal").val().length != 5) {
+        let errorMessage = "Mauvais format (ex: 03330)";
+        document.getElementById('codePostal').textContent = errorMessage;
+        $("#field-codePostal").css("border-color", "#FF0000");
+        $("#field-codePostal").next(".cross").fadeIn();
+        $("#codePostal").css("color", "#FF0000");
+        valid = false;
+      }
+      return valid;
+    })
+  });
+
+// Annoncer
+
+$(()=>{
+    $("#field-nomContact").keyup(function() {
+        if($("#field-nomContact").val() == "") {
+            let errorMessage = "Veuillez entrez le nom de la personne à contacter";
+            document.getElementById('nomContact').textContent = errorMessage;
+            $("#field-nomContact").css("border-color", "#FF0000");
+            $("#field-nomContact").next(".cross").show();
+            $("#nomContact").css("color", "#FF0000");
+        } else {
+            if (!$("#field-nomContact").val().match(/^[a-z]+$/i)) {
+                let errorMessage = "Uniquement des lettres";
+                $("#field-nomContact").next(".cross").show()
+                $("#field-nomContact").css("border-color", "#FF0000");
+                document.getElementById('nomContact').textContent = errorMessage
+                $("#nomContact").css("color", "#FF0000");
+            } else {
+                $("#field-nomContact").next(".cross").hide().text("");
+                document.getElementById('nomContact').textContent = "Nom du contact*"
+                $("#nomContact").css("color", "#000000");
+                $("#field-nomContact").css("border-color", "#ced4da");
+            }
+        }
+    })
+    $("#field-emailContact").keyup(function() {
+        if($("#field-emailContact").val() == "") {
+            let errorMessage = "Veuillez entrez l'email de la personne à contacter";
+            document.getElementById('emailContact').textContent = errorMessage;
+            $("#field-emailContact").css("border-color", "#FF0000");
+            $("#field-emailContact").next(".cross").show();
+            $("#emailContact").css("color", "#FF0000");
+        } else {
+            if ($("#field-emailContact").val().match(/^([^<>\[\]\\,;:\s@"]*)@([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}$/)) {
+                $("#field-emailContact").next(".cross").hide().text("");
+                document.getElementById('emailContact').textContent = "Email du contact*"
+                $("#emailContact").css("color", "#000000");
+                $("#field-emailContact").css("border-color", "#ced4da");
+            } else {
+                let errorMessage = "Veuillez entrer une adresse valide";
+                $("#field-emailContact").next(".cross").show()
+                $("#field-emailContact").css("border-color", "#FF0000"); 
+                document.getElementById('emailContact').textContent = errorMessage
+                $("#emailContact").css("color", "#FF0000");
+            }
+        }
+    })
+    $("#field-siret").keyup(function() {
+        if($("#field-siret").val() == "") {
+            let errorMessage = "Veuillez entrez votre siret";
+            document.getElementById('siret').textContent = errorMessage;
+            $("#field-siret").css("border-color", "#FF0000");
+            $("#field-siret").next(".cross").show();
+            $("#siret").css("color", "#FF0000");
+        } else {
+            if (!$("#field-siret").val().match(/^[0-9]+$/i)) {
+                let errorMessage = "Uniquement des chiffres";
+                $("#field-siret").next(".cross").show()
+                $("#field-siret").css("border-color", "#FF0000");
+                document.getElementById('siret').textContent = errorMessage
+                $("#siret").css("color", "#FF0000");
+            } else {
+                $("#field-siret").next(".cross").hide().text("");
+                document.getElementById('siret').textContent = "Votre Siret*"
+                $("#siret").css("color", "#000000");
+                $("#field-siret").css("border-color", "#ced4da");
+            }
+        }
+    })
+    $("#field-adresseTournage").keyup(function() {
+        if($("#field-adresseTournage").val() == "") {
+            let errorMessage = "Veuillez entrez l'adresse du tournage";
+            document.getElementById('adresseTournage').textContent = errorMessage;
+            $("#field-adresseTournage").css("border-color", "#FF0000");
+            $("#field-adresseTournage").next(".cross").show();
+            $("#adresseTournage").css("color", "#FF0000");
+        } else {
+            $("#field-adresseTournage").next(".cross").hide().text("");
+            document.getElementById('adresseTournage').textContent = "Adresse du lieu de tournage*"
+            $("#adresseTournage").css("color", "#000000");
+            $("#field-adresseTournage").css("border-color", "#ced4da");
+        }
+    })
+    $("#field-villeTournage").keyup(function() {
+        if($("#field-villeTournage").val() == "") {
+            let errorMessage = "Veuillez entrez la ville où aura lieu le tournage";
+            document.getElementById('villeTournage').textContent = errorMessage;
+            $("#field-villeTournage").css("border-color", "#FF0000");
+            $("#field-villeTournage").next(".cross").show();
+            $("#villeTournage").css("color", "#FF0000");
+        } else {
+            if (!$("#field-villeTournage").val().match(/^[a-z]+$/i)) {
+                let errorMessage = "Uniquement des lettres";
+                $("#field-villeTournage").next(".cross").show()
+                $("#field-villeTournage").css("border-color", "#FF0000");
+                document.getElementById('villeTournage').textContent = errorMessage
+                $("#villeTournage").css("color", "#FF0000");
+            } else {
+                $("#field-villeTournage").next(".cross").hide().text("");
+                document.getElementById('villeTournage').textContent = "Ville*"
+                $("#villeTournage").css("color", "#000000");
+                $("#field-villeTournage").css("border-color", "#ced4da");
+            }
+        }
+    })
+    $("#field-codePostalTournage").keyup(function() {
+        if($("#field-codePostalTournage").val() == "") {
+            let errorMessage = "Veuillez entrez le code postal de la ville où aura lieu le tournage";
+            document.getElementById('codePostalTournage').textContent = errorMessage;
+            $("#field-codePostalTournage").css("border-color", "#FF0000");
+            $("#field-codePostalTournage").next(".cross").show();
+            $("#codePostalTournage").css("color", "#FF0000");
+        } else {
+            if (!$("#field-codePostalTournage").val().match(/^[0-9]+$/i)) {
+                let errorMessage = "Uniquement des chiffres";
+                $("#field-codePostalTournage").next(".cross").show()
+                $("#field-codePostalTournage").css("border-color", "#FF0000");
+                document.getElementById('codePostalTournage').textContent = errorMessage
+                $("#codePostalTournage").css("color", "#FF0000");
+            } else {
+                $("#field-codePostalTournage").next(".cross").hide().text("");
+                document.getElementById('codePostalTournage').textContent = "Code Postal*"
+                $("#codePostalTournage").css("color", "#000000");
+                $("#field-codePostalTournage").css("border-color", "#ced4da");
+            }
+        }
+    })
+    $("#field-remuneration").keyup(function() {
+        if($("#field-remuneration").val() == "") {
+            let errorMessage = "Veuillez entrez la rémunération journalière pour ce rôle";
+            document.getElementById('remuneration').textContent = errorMessage;
+            $("#field-remuneration").css("border-color", "#FF0000");
+            $("#field-remuneration").next(".cross").show();
+            $("#remuneration").css("color", "#FF0000");
+        } else {
+            if (!$("#field-remuneration").val().match(/^[0-9]+$/i)) {
+                let errorMessage = "Uniquement des chiffres";
+                $("#field-remuneration").next(".cross").show()
+                $("#field-remuneration").css("border-color", "#FF0000");
+                document.getElementById('remuneration').textContent = errorMessage
+                $("#remuneration").css("color", "#FF0000");
+            } else {
+                $("#field-remuneration").next(".cross").hide().text("");
+                document.getElementById('remuneration').textContent = "Rémunération (/j)*"
+                $("#remuneration").css("color", "#000000");
+                $("#field-remuneration").css("border-color", "#ced4da");
+            }
+        }
+    })
+    $("#field-synopsis").keyup(function() {
+        if($("#field-synopsis").val() == "") {
+            let errorMessage = "Veuillez indiquer le synopsis du projet";
+            document.getElementById('synopsis').textContent = errorMessage;
+            $("#field-synopsis").css("border-color", "#FF0000");
+            $("#synopsis").next(".cross").show();
+            $("#synopsis").css("color", "#FF0000");
+        } else {
+            $("#synopsis").next(".cross").hide().text("");
+            document.getElementById('synopsis').textContent = "Synopsis*"
+            $("#synopsis").css("color", "#000000");
+            $("#field-synopsis").css("border-color", "#ced4da");
+        }
+    })
+    $("#field-exigenceRecruteur").keyup(function() {
+        if($("#field-exigenceRecruteur").val() == "") {
+            let errorMessage = "Veuillez indiquer les conditions de casting";
+            document.getElementById('exigenceRecruteur').textContent = errorMessage;
+            $("#field-exigenceRecruteur").css("border-color", "#FF0000");
+            $("#exigenceRecruteur").next(".cross").show();
+            $("#exigenceRecruteur").css("color", "#FF0000");
+        } else {
+            $("#exigenceRecruteur").next(".cross").hide().text("");
+            document.getElementById('exigenceRecruteur').textContent = "Exigence du recruteur*"
+            $("#exigenceRecruteur").css("color", "#000000");
+            $("#field-exigenceRecruteur").css("border-color", "#ced4da");
+        }
+    })
+    $("#envoyer").click(()=>{
+        valid = true;
+        if($("#field-nomContact").val() == "") {
+            let errorMessage = "Veuillez entrez le nom de la personne à contacter";
+            document.getElementById('nomContact').textContent = errorMessage;
+            $("#field-nomContact").css("border-color", "#FF0000"); 
+            $("#field-nomContact").next(".cross").fadeIn();
+            $("#nomContact").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-emailContact").val() == "") {
+            let errorMessage = "Veuillez entrez l'email de la personne à contacter";
+            document.getElementById('emailContact').textContent = errorMessage;
+            $("#field-emailContact").css("border-color", "#FF0000"); 
+            $("#field-emailContact").next(".cross").fadeIn();
+            $("#emailContact").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-siret").val() == "") {
+            let errorMessage = "Veuillez entrez votre siret";
+            document.getElementById('siret').textContent = errorMessage;
+            $("#field-siret").css("border-color", "#FF0000");
+            $("#field-siret").next(".cross").fadeIn();
+            $("#siret").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-adresseTournage").val() == "") {
+            let errorMessage = "Veuillez entrez l'adresse du tournage";
+            document.getElementById('adresseTournage').textContent = errorMessage;
+            $("#field-adresseTournage").css("border-color", "#FF0000");
+            $("#field-adresseTournage").next(".cross").fadeIn();
+            $("#adresseTournage").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-villeTournage").val() == "") {
+            let errorMessage = "Veuillez entrez la ville où aura lieu le tournage";
+            document.getElementById('villeTournage').textContent = errorMessage;
+            $("#field-villeTournage").css("border-color", "#FF0000");
+            $("#field-villeTournage").next(".cross").fadeIn();
+            $("#villeTournage").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-codePostalTournage").val() == "") {
+            let errorMessage = "Veuillez entrez le code postal de la ville où aura lieu le tournage";
+            document.getElementById('codePostalTournage').textContent = errorMessage;
+            $("#field-codePostalTournage").css("border-color", "#FF0000");
+            $("#field-codePostalTournage").next(".cross").fadeIn();
+            $("#codePostalTournage").css("color", "#FF0000");
+            valid = false;
+        } else if($("#field-codePostalTournage").val().length != 5) {
+            let errorMessage = "Mauvais format (ex: 03330)";
+            document.getElementById('codePostalTournage').textContent = errorMessage;
+            $("#field-codePostalTournage").css("border-color", "#FF0000");
+            $("#field-codePostalTournage").next(".cross").fadeIn();
+            $("#codePostalTournage").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-remuneration").val() == "") {
+            let errorMessage = "Veuillez entrez la rémunération journalière pour ce rôle";
+            document.getElementById('remuneration').textContent = errorMessage;
+            $("#field-remuneration").css("border-color", "#FF0000");
+            $("#field-remuneration").next(".cross").fadeIn();
+            $("#remuneration").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-synopsis").val() == "") {
+            let errorMessage = "Veuillez indiquer le synopsis du projet";
+            document.getElementById('synopsis').textContent = errorMessage;
+            $("#field-synopsis").css("border-color", "#FF0000");
+            $("#synopsis").next(".cross").fadeIn();
+            $("#synopsis").css("color", "#FF0000");
+            valid = false;
+        }
+        if($("#field-exigenceRecruteur").val() == "") {
+            let errorMessage = "Veuillez indiquer les conditions de casting";
+            document.getElementById('exigenceRecruteur').textContent = errorMessage;
+            $("#field-exigenceRecruteur").css("border-color", "#FF0000");
+            $("#exigenceRecruteur").next(".cross").fadeIn();
+            $("#exigenceRecruteur").css("color", "#FF0000");
+            valid = false;
+        }
+        return valid;
+    })
+});
+</script>
+</html>

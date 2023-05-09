@@ -1,0 +1,61 @@
+<% if (locals.token || profil.token) { %> 
+    <% console.log(locals); %>
+    <nav class="navbar navbar-light nav-bar-header" id="nav_desktop">
+        <a href="/" class="navbar-brand d-flex lienAccueil"><img src="../../public/images/Logo.png" alt="logo_caTourne"><img class="logo2" src="../../public/images/logoCaTourne.png" alt="logo_caTourne2"></a>
+        <ul class="connexion_header_nav">
+            <li><a href="/profil" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/user-profile.png" alt="icone_profil">Profil</a></li>
+            <li><a href="/logout" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/log-out.png" alt="icone_deconexion">Déconnexion</a></li>
+            <li><a href="/annoncer" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/PostAnnonce.png" alt="icone_annoncer">Annoncer</a></li>
+        </ul>
+    </nav>
+    <div id="bloc_page">
+        <nav id="nav_mobile">
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <div class="menu_ul">
+                        <li><a href="/profil" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/user-profile.png" alt="icone_profil">Profil</a></li>
+                        <li><a href="/logout" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/log-out.png" alt="icone_deconexion">Déconnexion</a></li>
+                        <li><a href="/annoncer" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/PostAnnonce.png" alt="icone_annoncer">Annoncer</a></li>
+                    </div>
+                    <footer>
+                        <p class="contact">Tél. : 01.52.36.73.95</p>
+                        <p class="contact">Mail : çaTourne@casting.fr</p>
+                    </footer>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<% } else { %>
+    <nav class="navbar navbar-light nav-bar-header" id="nav_desktop">
+        <a href="/" class="navbar-brand d-flex lienAccueil"><img src="../../public/images/Logo.png" alt="logo_caTourne"><img class="logo2" src="../../public/images/logoCaTourne.png" alt="logo_caTourne2"></a>
+        <ul class="connexion_header_nav">
+            <li class="header_inscription"><a href="/register" class="nav-link inscription">Inscription ?</a></li>
+            <li><a href="/login" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/connexion.png" alt="icone_connexion">Connexion</a></li>
+            <li><a href="/annoncer" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/PostAnnonce.png" alt="icone_connexion">Annoncer</a></li>
+        </ul>
+    </nav>
+    <div id="bloc_page">
+        <nav id="nav_mobile">
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <div class="menu_ul">
+                        <li><a href="/login" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/connexion.png" alt="icone_connexion">Connexion</a></li>
+                        <li><a href="/annoncer" class="nav-link icone_connexion"><img class="icone" src="../../public/images/icone/PostAnnonce.png" alt="icone_connexion">Annoncer</a></li>
+                    </div>
+                    <footer>
+                        <p class="contact">Tél. : 01.52.36.73.95</p>
+                        <p class="contact">Mail : çaTourne@casting.fr</p>
+                    </footer>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<% } %>

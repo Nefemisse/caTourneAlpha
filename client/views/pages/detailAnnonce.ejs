@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <%- include('../partials/head'); %> 
+    <title>Annonce</title>
+    <link rel="icon" type="image/png" href="../../public/images/icone/connexion.png" />
+</head>
+<header>
+  <%- include('../partials/header'); %>
+</header>
+<body>
+    <main class="main_detailAnnonce">
+      <% if (profil.token) { %>
+        <div class="btn-candidater d-flex justify-content-between">
+          <h4 class="text-muted mb-2 mx-3" id="infoAnnonceur">Information sur l'<b>annonceur</b></h4>
+        </div>
+        <% } %>
+      <section class="d-flex margin-detailAnnonces justify-content-center">
+        <div class="annonce_detailAnnonces">
+          <div class="index">
+            <div class="card mb-4">
+                <div class="card-body d-flex card-annonce">
+                  <p class="card-body card_annonces_index mx-1">
+                    Synopsis : 
+                    </br>
+                    </br>
+                    <%= data.synopsis %>
+                </p>
+                <p class="card-body card_annonces_index mx-1">
+                    Critère de sélection: 
+                    </br>
+                    </br>
+                    <%= data.critereSelection %>
+                      </br>
+                      </br>
+                      Date de tournage : du <%= data.dateDebutTournage %> au <%= data.dateFinTournage %> 
+                      </br>
+                      </br>
+                      Rémunération : <%= data.remuneration  %>€ /j
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <% if (profil.token) { %>
+          <div class="vh-100 vw-25 toggle none">
+            <div class="card_bodycard_body">
+              <div class="mask d-flex h-100 gradient-custom-3">
+                <div class="container h-100">
+                  <div class="row d-flex h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6 card-candidature">
+                      <div class="card card_body_candidature">
+                        <div class="card-body p-4"> 
+                          <div class="form-outline mb-1">
+                            <h6 class="text-left mt-2">Dir. de casting : <%= data.nomContact %></h6>
+                          </div>        
+                        </br>
+                          <div class="form-outline mb-1">
+                            <label class="form-label">Adresse :</label>
+                            <%=data.emailContact %>
+                          </div>  
+                        </br>                                  
+                          <div class="form-outline mb-1">
+                            <label class="form-label">Tél. :</label>
+                            <%="0"+data.tel %>
+                          </div>
+                          <a class="candidater">Candidater (soon)</a>
+                        </div>
+                      </div>
+                      <div class="infoNone infoBulleRow"></div>
+                      <div class="infoNone infoBulle">Vous aurez bientôt la possibiliter de candidater directement sur le site</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </section>
+    </main>
+    <% if (!profil.token) { %>
+      <footer>
+        <div class="detailAnnonceBtnInscription">
+          <a href="/register" class="btn btn-blue btn-block btn-lg gradient-custom-4 mt-3">Inscrivez-vous ici pour lire l'intégralité</a>
+        </div>
+        <a href="./login" class="fw-bolder text-body detailAnnonceBtnConnexion mt-3 mb-5 text-decoration-none">Connexion</a>
+      </footer>
+    <% } %> 
+</body>
+<script>
+  // Candidater 
+
+let i = 0;
+$("#infoAnnonceur").click(() => {
+    i++;
+    if (i%2 != 0) {
+        $('.annonce_detailAnnonces').toggleClass("none");
+        $('.toggle').removeClass('none')
+    } else {
+        $('.annonce_detailAnnonces').toggleClass("none");
+        $('.toggle').addClass('none')
+    }
+});
+    $(".candidater").mouseenter(() => {
+        $('.infoBulle').removeClass('infoNone');
+        $('.infoBulleRow').removeClass('infoNone');
+    });
+    $(".candidater").mouseleave(() => {
+        $('.infoBulle').addClass('infoNone');
+        $('.infoBulleRow').addClass('infoNone');
+    });
+</script>
+</html>

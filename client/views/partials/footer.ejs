@@ -1,0 +1,15 @@
+<div class="contactFooter bgc_lightFooter">
+  <div class="infoNone infoBulleRowFooter"></div>
+  <div class="infoNone infoBulleFooter"><span>Maintenance en cours contactez-nous par mail à l'adresse suivante : çaTourne@casting.fr</span></div>
+    <a class="text-muted contact">Contactez-nous (non-disponible)</a>
+</div>
+<script>
+    $(".contactFooter").mouseenter(() => {
+      $('.infoBulleFooter').removeClass('infoNone');
+      $('.infoBulleRowFooter').removeClass('infoNone');
+    });
+    $(".contactFooter").mouseleave(() => {
+      $('.infoBulleFooter').addClass('infoNone');
+      $('.infoBulleRowFooter').addClass('infoNone');
+    });
+</script>
